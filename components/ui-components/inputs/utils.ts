@@ -1,0 +1,1 @@
+export const commonInputStyle = 'block w-full rounded-md border-gray-400 border px-1 py-1 focus:border-gray-800 focus:ring-gray-800 sm:text-sm text-left ring-2 ring-transparent cursor-pointer  focus:ring-offset-2 shadow'
