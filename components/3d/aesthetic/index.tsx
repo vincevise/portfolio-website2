@@ -21,6 +21,13 @@ export default function AestheticSceneR3F(): JSX.Element {
   const [shapeCount, setShapeCount] = useState(400);
   const [selectedShapes, setSelectedShapes] = useState<GeometryType[]>(['torus', 'cube', 'sphere']);
   const [color, setColor] = useState('#ffffff');
+  const [pixelRatio, setPixelRatio] = useState(1);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    }
+  }, []);
 
   const shapes:{
     value:GeometryType;
@@ -107,7 +114,7 @@ export default function AestheticSceneR3F(): JSX.Element {
           flat
           gl={{
             antialias: true,
-            pixelRatio: Math.min(window.devicePixelRatio, 2),
+            pixelRatio: pixelRatio,
           }}
           onCreated={({ scene, gl }) => {
             scene.background = new THREE.Color(0xffffff);

@@ -24,6 +24,11 @@ type HeaderFooterProps = {
 const Modal = ({ open, setOpenModal, children, height = '600px', maxwidth = '600px', onKeyDown, className = '', zIndex = 20 }: ModalProps) => {
   const [hasModalFooter, setHasModalFooter] = useState(false);
   const [hasModalHeader, setHasModalHeader] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -42,6 +47,8 @@ const Modal = ({ open, setOpenModal, children, height = '600px', maxwidth = '600
       setHasModalHeader(false);
     }
   }, [children, open]);
+
+  if (!mounted) return null;
 
   return createPortal(
     <AnimatePresence>
