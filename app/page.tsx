@@ -11,20 +11,6 @@ import ItemContainer from "@/components/ui-components/item-container";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaAws, FaNodeJs, FaReact } from "react-icons/fa";
-import { GrMysql } from "react-icons/gr";
-import { IoSchoolOutline } from "react-icons/io5";
-import { MdOutlineArrowOutward } from "react-icons/md";
-import { PiSuitcaseSimple } from "react-icons/pi";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import {
-  SiAdobeillustrator,
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiJavascript,
-  SiMongodb,
-  SiPostgresql,
-} from "react-icons/si";
 import "tailwindcss/tailwind.css"; // Import Tailwind CSS
 
 // Explicitly define the component return type
